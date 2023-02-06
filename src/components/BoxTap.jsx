@@ -4,10 +4,10 @@ import '../styles/BoxTap.scss'
 
 const BoxTap = ({id,boolean}) => {
 
-    const { state, trueCardsState, falseCardsState, togglePlayerPlay } = useContext(AppContext);
+    const { state, trueCardsState,  togglePlayerPlay } = useContext(AppContext);
 
     const x = ()=>{
-        let pintar, i=0,j=0,play
+        let pintar, i=0,j=0
         pintar = state.playerPlay==1?'activeSelectOne':'activeSelectTwo'
         state.boardState.map(row=>{
                 j=0;
@@ -19,7 +19,6 @@ const BoxTap = ({id,boolean}) => {
                                 togglePlayerPlay()
                             }
                         }
-                        // falseCardsState(i,j)
                     }
                     j++ 
                 })
@@ -38,6 +37,10 @@ const BoxTap = ({id,boolean}) => {
         auxCantidadP15=0
         auxCantidadP16=0
         auxCantidadP17=0
+        auxCantidadP21=0
+        auxCantidadP25=0
+        auxCantidadP26=0
+        auxCantidadP27=0
         p1=[]
         p2=[]
         state.boardState.map(row=>{
@@ -49,65 +52,50 @@ const BoxTap = ({id,boolean}) => {
         if (p1.length > 3){            
             p1.sort(comparar)
             p2.sort(comparar)
-            console.log(p1,p2)
-            for (let i=0;i<(p1.length-1);i++){
-                if (p1.includes(p1[i]+1)){
+            for (let i = 0;i<p1.length;i++){
+                if(p1[i]+1==p1[i+1]){
                     auxCantidadP11+=1
-                    if (auxCantidadP11==3) console.log(`Ya son 4 seguidas o mas del p11 ${auxCantidadP11}`)
-                    auxCantidadP15=0
-                    auxCantidadP16=0
-                    auxCantidadP17=0
-                }
-                if (p1.includes(p1[i]+5)){
-                    auxCantidadP15+=1
-                    if (auxCantidadP15==3) console.log(`Ya son 4 seguidas o mas del p15 ${auxCantidadP15}`)
+                    if (auxCantidadP11==3) console.log(`Ya son 4 seguidas o mas del p15 4`)
+                }else{
                     auxCantidadP11=0
-                    auxCantidadP16=0
-                    auxCantidadP17=0
                 }
-                if (p1.includes(p1[i]+6)){
-                    auxCantidadP16+=1
-                    if (auxCantidadP16==3) console.log(`Ya son 4 seguidas o mas del p16 ${auxCantidadP16}`)
-                    auxCantidadP11=0
+                if (p1.includes(p1[i]+5) && p1.includes(p1[i]+10) && p1.includes(p1[i]+15) && p1[i]!=1 && p1[i]!=2 && p1[i]!=3 && p1[i]!=7 && p1[i]!=8 && p1[i]!=9 && p1[i]!=13 && p1[i]!=14 && p1[i]!=15){
+                    console.log(`Ya son 4 seguidas o mas del p15 4`)
+                }else{
                     auxCantidadP15=0
-                    auxCantidadP17=0
                 }
-                if (p1.includes(p1[i]+7)){
-                    auxCantidadP17+=1
-                    if (auxCantidadP17==3) console.log(`Ya son 4 seguidas o mas del p17 ${auxCantidadP17}`)
-                    auxCantidadP11=0
-                    auxCantidadP15=0
+                if (p1.includes(p1[i]+6) && p1.includes(p1[i]+12) && p1.includes(p1[i]+18) ){
+                    console.log(`Ya son 4 seguidas o mas del p15 4`)
+                }else{
                     auxCantidadP16=0
                 }
-                
-                if (p2.includes(p2[i]+1)){
+                if (p1.includes(p1[i]+7) && p1.includes(p1[i]+14) && p1.includes(p1[i]+21) && p1[i]!=4 && p1[i]!=5 && p1[i]!=6 && p1[i]!=10 && p1[i]!=11 && p1[i]!=12 && p1[i]!=16 && p1[i]!=17 && p1[i]!=18){
+                    console.log(`Ya son 4 seguidas o mas del p15 4`)
+                }else{
+                    auxCantidadP17=0
+                }
+
+                if(p2[i]+1==p2[i+1]){
                     auxCantidadP21+=1
-                    if (auxCantidadP21==3) console.log(`Ya son 4 seguidas o mas del p11 ${auxCantidadP21}`)
-                    auxCantidadP25=0
-                    auxCantidadP26=0
-                    auxCantidadP27=0
-                }
-                
-                if (p2.includes(p2[i]+5)){
-                    auxCantidadP25+=1
-                    if (auxCantidadP25==3) console.log(`Ya son 4 seguidas o mas del p25 ${auxCantidadP25}`)
+                    console.log(auxCantidadP21)
+                    if (auxCantidadP21==3) console.log(`Ya son 4 seguidas o mas del p25 4`)
+                }else{
                     auxCantidadP21=0
-                    auxCantidadP26=0
-                    auxCantidadP27=0
                 }
-                if (p2.includes(p2[i]+6)){
-                    auxCantidadP26+=1
-                    if (auxCantidadP26==3) console.log(`Ya son 4 seguidas o mas del p26 ${auxCantidadP26}`)
-                    auxCantidadP21=0
+                if (p2.includes(p2[i]+5) && p2.includes(p2[i]+10) && p2.includes(p2[i]+15) && (p2[i]%3)==0){
+                    console.log(`Ya son 4 seguidas o mas del p25 4`)
+                }else{
                     auxCantidadP25=0
-                    auxCantidadP27=0
                 }
-                if (p2.includes(p2[i]+7)){
-                    auxCantidadP27+=1
-                    if (auxCantidadP27==3) console.log(`Ya son 4 seguidas o mas del p27 ${auxCantidadP27}`)
-                    auxCantidadP21=0
-                    auxCantidadP25=0
+                if (p2.includes(p2[i]+6) && p2.includes(p2[i]+12) && p2.includes(p2[i]+18) ){
+                    console.log(`Ya son 4 seguidas o mas del p25 4`)
+                }else{
                     auxCantidadP26=0
+                }
+                if (p2.includes(p2[i]+7) && p2.includes(p2[i]+14) && p2.includes(p2[i]+21) && p2[i]!=4 && p2[i]!=5 && p2[i]!=6 && p2[i]!=10 && p2[i]!=11 && p2[i]!=12 && p2[i]!=16 && p2[i]!=17 && p2[i]!=18){
+                    console.log(`Ya son 4 seguidas o mas del p25 4`)
+                }else{
+                    auxCantidadP27=0
                 }
             }
         }
