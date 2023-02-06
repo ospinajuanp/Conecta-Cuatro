@@ -46,7 +46,7 @@ module.exports = {
         static: path.join(__dirname, 'dist'), // ruta de nuestro dist
         historyApiFallback: true, // llevar histórico para la navegación
         compress: true, // si deseamos comprimir
-        port: 3006, // el puerto que deseamos utilizar
+        port: 3007, // el puerto que deseamos utilizar
         open: true, // para abrir nuestro navegar automáticamente 
     }
 }

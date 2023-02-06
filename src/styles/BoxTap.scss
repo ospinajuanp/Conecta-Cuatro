@@ -1,0 +1,23 @@
+.BoxTap{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background-color: #C147E9;
+    border-radius: 30px;
+    &__Inside{
+        width: 30px;
+        height: 30px;
+        background-color: #E5B8F4;
+        border-radius: 10px;
+        z-index: 10;
+    }
+}
+
+.activeSelectOne{
+    background-color: red;
+}
+.activeSelectTwo{
+    background-color: yellow;
+}
