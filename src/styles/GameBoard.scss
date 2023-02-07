@@ -1,12 +1,57 @@
+// E5B8F4
+// C147E9
 .GameBoard{
-    width: 350px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(6,1fr);
-    grid-template-rows: repeat(7,1fr);
-    justify-items: center;
-    align-self: center;
-    gap: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+
+
+    &-stat{
+        width: 370px;
+        min-width: 370px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 2vw;
+        
+        div{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 171px;
+            height: 50px;
+            background-color: #E5B8F4;
+            border: 4px solid #C147E9;
+            color: black;
+            font-weight: 600;
+            font-size: 1.8em;
+        }
+    }
+
+    &-table{
+        width: 370px;
+        min-width: 350px;
+        padding: 10px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(6,1fr);
+        grid-template-rows: repeat(7,1fr);
+        justify-items: center;
+        align-self: center;
+        gap: 8px;
+        margin-bottom: 2vw;
+        border: 1px solid white;
+    }
+
+    &-reset{
+        width: 370px;
+        min-width: 370px;
+        background-color: #C147E9;
+        border: 4px solid #C147E9;
+        color: black;
+        cursor: pointer;
+    }
 
 
 }

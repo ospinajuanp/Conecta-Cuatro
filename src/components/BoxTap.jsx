@@ -81,12 +81,11 @@ const BoxTap = ({id,boolean}) => {
             boolWin = cicloValidar(p1,1) || cicloValidar(p2,2) 
 
         }
-        console.log(boolWinOne,boolWinTwo)
         if (boolWin) {
             resetBoard()
         }
     }
-    
+
     useEffect(()=>{
         state.boardState.map(row=>{
             row.map(column=>{

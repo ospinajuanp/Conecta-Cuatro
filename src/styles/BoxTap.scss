@@ -6,6 +6,8 @@
     height: 50px;
     background-color: #C147E9;
     border-radius: 30px;
+    cursor: pointer;
+    
     &__Inside{
         width: 30px;
         height: 30px;
@@ -16,8 +18,8 @@
 }
 
 .activeSelectOne{
-    background-color: red;
+    background-color: rgb(255, 158, 158);
 }
 .activeSelectTwo{
-    background-color: yellow;
+    background-color: rgb(255, 255, 158);
 }

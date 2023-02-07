@@ -11,8 +11,13 @@ const GameBoard = () => {
 
     return (
         <div className='GameBoard'>
-            
-            {state.boardState.map(row=>(
+            <div className='GameBoard-stat'>
+                <div>Player1:{state.amountWinPlayerOne}</div>
+                <div>Player2:{state.amountWinPlayerTwo}</div>
+            </div>
+            <div className='GameBoard-table'>
+            {
+                state.boardState.map(row=>(
                     row.map(column=>(
                             <BoxTap id={column.id} boolean={column.value}/>
                             )
@@ -20,9 +25,8 @@ const GameBoard = () => {
                     )
                 )
             }
-            <div>{state.amountWinPlayerOne}</div>
-            <div>{state.amountWinPlayerTwo}</div>
-            <div onClick={a}>as</div>
+            </div>
+            <div onClick={a} className='GameBoard-reset'>Reset</div>
         </div>
     );
 };
