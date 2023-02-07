@@ -5,7 +5,9 @@ import '../styles/GameBoard.scss'
 
 const GameBoard = () => {
     const { state } = useContext(AppContext);
-    
+    const a = () => {
+        console.log(state)
+    }
 
     return (
         <div className='GameBoard'>
@@ -18,6 +20,9 @@ const GameBoard = () => {
                     )
                 )
             }
+            <div>{state.amountWinPlayerOne}</div>
+            <div>{state.amountWinPlayerTwo}</div>
+            <div onClick={a}>as</div>
         </div>
     );
 };
