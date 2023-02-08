@@ -102,7 +102,6 @@ const BoxTap = ({id,boolean}) => {
     return (
         <div className='BoxTap' onClick={x}>
             <div id={id} className="BoxTap__Inside">
-            {id}
             </div>
         </div>
     );
