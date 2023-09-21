@@ -1,4 +1,4 @@
-# Conecta/Connect 4
+# Encyclopedia/enciclopedia Star Wars
 
-- English [CONNECT 4](./README/english.md.md)
-- Español [CONECTA 4](./README/spanish.md)
+- English [Encyclopedia Star Wars](./README/english.md)
+- Español [Enciclopedia Star Wars](./README/spanish.md)
